@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Система изучения английского языка через слои правил</title>
+
+  <style>
+    .sticky {
+      position: fixed;
+      top: 0;
+      z-index: 101;
+    }
+
+    .lvl2:hover~.lvl0 .lvl2-in {
+      color: blue;
+      background-color: aliceblue;
+      text-shadow: 1px 1px 2px aliceblue, 0 0 1em blue;
+    }
+
+    .lvl1:hover~.lvl0 .lvl1-in {
+      color: red;
+      background-color: aliceblue;
+      text-shadow: 1px 1px 2px aliceblue, 0 0 1em red;
+    }
+
+    .bg-white {
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <header class="row my-4">
+      <h1 class="col-12 text-center">Система изучения английского языка через слои правил</h1>
+      <p class="my-2">О проектe:<a class="col-12" href="https://github.com/Lyumih/city-level-eng">https://github.com/Lyumih/city-level-eng</a>
+      </p>
+      <h3 class="col-12">Подсказки:</h3><br>
+      <p>
+        1. Нажатие на <i>заголовок</i> таблицы <b>свернёт</b> её. <br>
+        2. Нажатие на <i>уровень</i> покажет <b>теоретический материал</b>. <br>
+        3. Наведение на <i>строку</i> <b>подсветит</b> ключевые слова в предложении. <br>
+      </p>
+    </header>
+
+
+    <main>
+
+      <!-- ВЫПАДАЮЩИЙ СПИСОК С ФИЛЬТРОМ -->
+      <div class="col-12 text-right">
+        <div class="dropdown ">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuComplexity" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Сложность
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuComplexity">
+            <h6 class="dropdown-header">Уровень языка</h6>
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item active" href="https://englex.ru/level-elementary/" target="_blank">A1
+              Elementary &#10003;</a>
+            <a class="dropdown-item disabled" href="#!">A2 Pre-Intermediate</a>
+            <a class="dropdown-item disabled" href="#!">B1 Intermediate</a>
+            <a class="dropdown-item disabled" href="#!">B2 Upper-Intermediate</a>
+            <a class="dropdown-item disabled" href="#!">C1 Advanced</a>
+            <a class="dropdown-item disabled" href="#!">C2 Proficiency</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Строка с основной таблицей -->
+      <div class="row bg-white" id="aside1">
+        <!-- ОСНОВНАЯ ТАБЛИЦА С УРОВНЯМИ -->
+        <table class="col-12 table table-hover my-3">
+          <thead class="thead-light" data-toggle="collapse" href="#collapseExample">
+            <tr>
+              <th>Уровень</th>
+              <th>Правило</th>
+              <th>Содержание</th>
+            </tr>
+          </thead>
+          <tbody class="" id="collapseExample" aria-expanded="true">
+            <tr class="lvl2" href="#top">
+              <th><a href="#lvl2-theory">2 - Сокращения</a></th>
+              <td class="rule">am/is/are</td>
+              <td class="content">I'm = I am</td>
+            </tr>
+            <tr class="lvl1">
+              <th><a href="#lvl1-theory">1 - Времена</a></th>
+              <td class="rule">+ Present Simple: V/Vs</td>
+              <td class="content">I + am</td>
+            </tr>
+            <tr class="lvl0">
+              <th>0 - Текст</th>
+              <td class="rule">
+                <span class="lvl1-in lvl2-in">I</span>
+                <span class="lvl1-in lvl2-in">am</span>
+                <span>Sasha</span>
+              </td>
+              <td class="content">
+                <span class="lvl1-in lvl2-in">Я</span> Саша
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Строка с кнопками управления -->
+
+        <!-- КНОПКА СЛЕДУЮЩИЙ ПРИМЕР -->
+        <div class="col-6 my-3">
+          <button onclick="nextExample();" class="btn btn-primary btn-block">Следующий пример</button>
+        </div>
+      </div>
+
+      <!-- Строка с прикрепленным материалом -->
+      <div class="row my-5">
+        <h2 class="col-12 text-center">Теоритеческий материал</h2>
+
+        <a name="lvl1-theory"></a>
+        <div class="lvll-theory my-3">
+          <div class="col-12 text-center">
+            <h3>Уровень 1. Времена глаголов</h3>
+            <p>To be</p>
+            <img class="img-thumbnail" src="http://englishtexts.ru/wp-content/VerbToBe.png" alt="Уровень 1. Времена глаголов">
+            <p>Остальные глаголы</p>
+            <img class="img-thumbnail" src="http://openlit.ru/elements/forum/glagol.jpg" alt="Уровень 1. Времена глаголов">
+            <p>Остальные глаголы</p>
+            <img class="img-thumbnail" src="https://vivaeurope.ru/wp-content/uploads/2017/04/Zalog-v-angliyskom-yazyke.jpg" alt="Уровень 1. Времена глаголов">
+          </div>
+        </div>
+
+        <a name="lvl2-theory"></a>
+        <div class="lvl2-theory my-3">
+          <div class="col-12 text-center">
+            <h3>Уровень 2. Сокращения</h3>
+            <img class="img-thumbnail" src="https://i.imgur.com/XxjbVuW.png" alt="Уровень 1. Времена глаголов">
+          </div>
+        </div>
+
+      </div>
+
+
+    </main>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script>
+    let example = 0
+    let MAX_EXAMPLE = 2
+
+
+    let lvl0Rules = [
+      '<span class="lvl1-in lvl2-in">I am</span> Sasha.',
+      '<span class="lvl1-in lvl2-in">What\'s</span> your name?'
+    ]
+    let lvl0Contents = [
+      '<span class="lvl1-in lvl2-in">Я</span> Саша.',
+      '<span class="lvl1-in lvl2-in">Как</span> тебя <span class="lvl1-in"> зовут?</span>'
+    ]
+
+    let lvl1Contents = ["I + am", "What + is + your name"]
+    let lvl1Rules = ["+ Present Simple: V/Vs", "? Present Simple: V/Vs"]
+
+    let lvl2Contents = ["I'm = I am", "What's = What is"]
+    let lvl2Rules = ["am/is/are", "am/is/are"]
+
+
+    init()
+
+    function init() {
+      example = MAX_EXAMPLE
+      nextExample()
+    }
+
+    function nextExample() {
+      console.log('Получить следующий пример')
+      example++
+      if (example >= MAX_EXAMPLE) {
+        example = 0
+      }
+      console.log(example)
+      printExample(example)
+    }
+
+
+    function printExample(example) {
+      console.log('Показать пример', example)
+      $('.lvl0 > .content').html(lvl0Contents[example])
+      $('.lvl1 > .content').text(lvl1Contents[example])
+      $('.lvl2 > .content').text(lvl2Contents[example])
+
+      $('.lvl0 > .rule').html(lvl0Rules[example])
+      $('.lvl1 > .rule').text(lvl1Rules[example])
+      $('.lvl2 > .rule').text(lvl2Rules[example])
+    }
+  </script>
+
+
+  <script>
+    // Прилипающий стикер
+    (function() { // анонимная функция (function(){ })(), чтобы переменные "a" и "b" не стали глобальными
+      var a = document.querySelector('#aside1'),
+        b = null; // селектор блока, который нужно закрепить
+      window.addEventListener('scroll', Ascroll, false);
+      document.body.addEventListener('scroll', Ascroll, false); // если у html и body высота равна 100%
+      function Ascroll() {
+        if (b == null) { // добавить потомка-обёртку, чтобы убрать зависимость с соседями
+          var Sa = getComputedStyle(a, ''),
+            s = '';
+          for (var i = 0; i < Sa.length; i++) { // перечислить стили CSS, которые нужно скопировать с родителя
+            if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
+              s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
+            }
+          }
+          b = document.createElement('div'); // создать потомка
+          b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
+          a.insertBefore(b, a.firstChild); // поместить потомка в цепляющийся блок первым
+          var l = a.childNodes.length;
+          for (var i = 1; i < l; i++) { // переместить во вновь созданного потомка всех остальных потомков (итого: создан потомок-обёртка, внутри которого по прежнему работают скрипты)
+            b.appendChild(a.childNodes[1]);
+          }
+          a.style.height = b.getBoundingClientRect().height + 'px'; // если под скользящим элементом есть другие блоки, можно своё значение
+          a.style.padding = '0';
+          a.style.border = '0'; // если элементу присвоен padding или border
+        }
+        if (a.getBoundingClientRect().top <= 0) { // elem.getBoundingClientRect() возвращает в px координаты элемента относительно верхнего левого угла области просмотра окна браузера
+          b.className = 'sticky';
+        } else {
+          b.className = '';
+        }
+        window.addEventListener('resize', function() {
+          a.children[0].style.width = getComputedStyle(a, '').width
+        }, false); // если изменить размер окна браузера, измениться ширина элемента
+      }
+    })()
+  </script>
+</body>
+
+</html>
